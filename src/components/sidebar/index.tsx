@@ -3,6 +3,7 @@ import { Button } from "../ui/button";
 import { Sheet, SheetTrigger, SheetContent } from "../ui/sheet";
 import { Home, icons, Package, Package2, PanelBottom, Settings, Settings2, ShoppingBag, User, Users } from "lucide-react";
 import { Tooltip, TooltipProvider } from "../ui/tooltip";
+import { TooltipContent, TooltipTrigger } from "@radix-ui/react-tooltip";
 
 export function Sidebar(){
     return ( 
@@ -16,9 +17,22 @@ export function Sidebar(){
                         className="flex h-9 w-9 shrink-0 items-center justify-center bg-primary text-primary-foreground rounded-full"
                         prefetch={false} 
                          >
-                         <Package className="h-4 w-4"/>
+                         <PanelBottom className="h-4 w-4"/>
                           <span className="sr-only">Dashbord avatar</span>
                     </Link>
+                    <Tooltip>
+                        <TooltipTrigger asChild>
+                        <Link 
+                            href="#"
+                            className="flex h-9 w-9 shrink-0 items-center justify-center bg-primary text-primary-foreground rounded-full"
+                            prefetch={false} 
+                            >
+                                <Home className="h-4 w-4"/>
+                                <span className="sr-only">Pedidos</span>
+                           </Link>
+                        </TooltipTrigger>
+                        <TooltipContent side="right">Pedidos</TooltipContent>
+                    </Tooltip>
                     </TooltipProvider>
                 </nav>
             </aside>
